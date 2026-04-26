@@ -5,7 +5,7 @@ import { SOCIAL_LINKS } from '../constants';
 
 const Hero: React.FC = () => {
   // Use string path relative to the root (index.html) because we cannot import non-JS files in this environment
-  const profileImage = "/assets/hero-image.png"; 
+  const profileImage = `${import.meta.env.BASE_URL}assets/hero-image.png`;
   
   const techStack = [
     { name: 'Vite', icon: 'https://cdn.simpleicons.org/vite/646CFF' },
@@ -77,7 +77,7 @@ const Hero: React.FC = () => {
                 <img src={SOCIAL_LINKS.find(l => l.platform === 'Credly')?.icon} className="w-14 h-12 object-contain" alt="Credly" />
               </a>
               <a 
-                href="/assets/resume-f6.pdf" 
+                href={`${import.meta.env.BASE_URL}assets/resume-f6.pdf`} 
                 download="Alvin_Ambattu_Resume.pdf"
                 className="px-6 py-3  bg-primary hover:bg-green-700 text-white font-medium rounded-full transition-all flex items-center gap-2 shadow-lg shadow-primary/25 hover:scale-105"
               >
